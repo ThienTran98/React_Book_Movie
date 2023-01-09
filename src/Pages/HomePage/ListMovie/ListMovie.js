@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from "react";
+import { movieService } from "../../../services/movieService";
+import CardItem from "./CardItem";
+import { getPagination } from "../../../redux-toolkit/movieSlice";
+import { Pagination } from "antd";
+import { Card } from "antd";
+const { Meta } = Card;
+
+export default function ListMovie() {
+  const [listMovie, setListMovie] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  useEffect(() => {
+    movieService.getListMovie(currentPage).then((res) => {
+      setListMovie(res.data.content);
+    });
+  }, [currentPage]);
+  const onChange = (page) => {
+    setCurrentPage(page);
+  };
+  const handlerRenderListCard = () => {
+    return listMovie?.items.map((item, index) => {
+      return <CardItem key={index} item={item} />;
+    });
+  };
+  return (
+    <div className="container mx-auto px-10 py-6 ">
+      <div className="flex-col justify-between flex-wrap">
+        <div className="grid-cols-5 grid gap-2">{handlerRenderListCard()}</div>
+        <div className="flex justify-center mt-6">
+          <Pagination
+            onChange={onChange}
+            current={currentPage}
+            total={listMovie?.totalCount}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
