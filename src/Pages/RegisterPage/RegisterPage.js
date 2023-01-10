@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import { NavLink } from "react-router-dom";
 import { userService } from "../../services/userService";
 import styles from "./register.module.css";
-import bg_panda from "../../assets/45661-sleep-panda.json";
+import bg_plane from "../../assets/78714-plane.json";
 
 export default function RegisterPage() {
   const onFinish = (values) => {
@@ -42,7 +42,7 @@ export default function RegisterPage() {
           width: 70,
         }}
       >
-        <Option value="GP01">GP05</Option>
+        <Option value="GP05">GP05</Option>
       </Select>
     </Form.Item>
   );
@@ -50,13 +50,15 @@ export default function RegisterPage() {
   return (
     <div className="mt-24 h-screen w-screen">
       <div className={`${styles.modalRegister} flex`}>
-        <div className=" container my-auto">
-          <div className=" h-3/5 w-2/3 flex bg-white mx-auto rounded p-5 ">
+        <div className=" container my-auto flex justify-center">
+          <div className=" h-3/5 w-2/3 flex bg-white rounded p-5 ">
             <div className="w-1/2 my-auto hidden lg:flex md:flex">
-              <Lottie animationData={bg_panda} />
+              <Lottie animationData={bg_plane} />
             </div>
             <div className="lg:w-1/2 md:w-1/2 w-full my-auto ">
-              <h2 className="text-center text-2xl text-amber-600">Đăng ký</h2>
+              <h2 className="text-center text-2xl text-amber-600 mb-4">
+                Đăng ký
+              </h2>
               <Form
                 name="basic"
                 labelCol={{
@@ -152,6 +154,7 @@ export default function RegisterPage() {
                   <Input />
                 </Form.Item>
                 <Form.Item
+                  className="hidden lg:block md:block "
                   name="hoTen"
                   label="Nickname"
                   tooltip="What do you want others to call you?"

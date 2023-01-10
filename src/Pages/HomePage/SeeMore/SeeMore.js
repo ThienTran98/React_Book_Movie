@@ -87,7 +87,7 @@ export default function SeeMore() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-2 mt-4">
+              <div className="hidden  lg:grid md:grid grid-cols-3 gap-2 mt-4">
                 <div>
                   <img
                     className="rounded"

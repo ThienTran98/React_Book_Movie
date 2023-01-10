@@ -10,10 +10,9 @@ export default function CardItem(props) {
     <Card
       hoverable
       style={{
-        width: "250px",
         textAlign: "justify",
       }}
-      className="mx-auto w-64 shadow-2xl text-center mt-4"
+      className="mx-auto lg:w-64 md:w-56 shadow-2xl text-center mt-4"
       cover={<img alt="example" className="h-60 object-cover" src={hinhAnh} />}
     >
       <Meta

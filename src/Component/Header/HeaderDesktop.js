@@ -1,13 +1,22 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { setUserLogin } from "../../redux-toolkit/userSlice";
+import { userLocalStorage } from "../../services/LocalStorageService";
 
 export default function HeaderDesktop() {
   let user = useSelector((state) => {
     return state.userSlice.user;
   });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    userLocalStorage.remove();
+    dispatch(setUserLogin(null));
+    navigate("/login");
+  };
   const renderUserNav = () => {
     if (user) {
       return (
@@ -21,7 +30,10 @@ export default function HeaderDesktop() {
             {user?.hoTen}
           </button>
           <NavLink className="" to="/login">
-            <button className="self-center px-8 py-3 rounded hover:text-red-600 ">
+            <button
+              onClick={handleLogout}
+              className="self-center px-8 py-3 rounded hover:text-red-600 "
+            >
               Đăng xuất
             </button>
           </NavLink>
@@ -30,12 +42,16 @@ export default function HeaderDesktop() {
     } else {
       return (
         <>
-          <button className="self-center px-8 py-3 hover:text-red-600 border-solid border-rose-600 border-r">
-            <FontAwesomeIcon icon={faUser} /> Đăng Ký
-          </button>
-          <button className="self-center px-8 py-3 hover:text-red-600 ">
-            <FontAwesomeIcon icon={faUser} /> Đăng Nhập
-          </button>
+          <NavLink to="/register">
+            <button className="self-center px-8 py-3 hover:text-red-600 border-solid border-rose-600 border-r">
+              <FontAwesomeIcon icon={faUser} /> Đăng Ký
+            </button>
+          </NavLink>
+          <NavLink to="/login">
+            <button className="self-center px-8 py-3 hover:text-red-600 ">
+              <FontAwesomeIcon icon={faUser} /> Đăng Nhập
+            </button>
+          </NavLink>
         </>
       );
     }

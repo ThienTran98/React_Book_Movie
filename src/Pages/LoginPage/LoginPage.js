@@ -35,10 +35,10 @@ export default function LoginPage() {
       <div className={`${styles.modalLogin} flex`}>
         <div className="container  my-auto px-10">
           <div className="bg-white mx-auto flex  rounded lg:w-3/5 lg:h-3/5 md:w-3/5 md:h-3/5">
-            <div className="w-1/2 my-auto hidden lg:flex md:flex">
+            <div className="w-1/2 my-auto hidden lg:flex">
               <Lottie animationData={bg_cute} />
             </div>
-            <div className="lg:w-1/2 md:w-1/2 w-full my-auto px-5 py-10">
+            <div className="lg:w-1/2 w-full my-auto px-5 py-10">
               <h3 className="text-center text-2xl text-amber-600 mb-10">
                 Đăng Nhập
               </h3>

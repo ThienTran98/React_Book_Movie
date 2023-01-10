@@ -23,9 +23,11 @@ export default function ListMovie() {
     });
   };
   return (
-    <div className="container mx-auto px-10 py-6 ">
+    <div className="container mx-auto lg:px-10 lg:py-6 md:px-10 md:py-6 ">
       <div className="flex-col justify-between flex-wrap">
-        <div className="grid-cols-5 grid gap-2">{handlerRenderListCard()}</div>
+        <div className="lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 grid gap-3">
+          {handlerRenderListCard()}
+        </div>
         <div className="flex justify-center mt-6">
           <Pagination
             onChange={onChange}

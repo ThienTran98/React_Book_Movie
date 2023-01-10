@@ -1,8 +1,10 @@
 import { faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { setUserLogin } from "../../redux-toolkit/userSlice";
+import { userLocalStorage } from "../../services/LocalStorageService";
 
 export default function HeaderTablet() {
   const [show, setShow] = useState(false);
@@ -10,6 +12,16 @@ export default function HeaderTablet() {
   const user = useSelector((state) => {
     return state.userSlice.user;
   });
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    setShow(!show);
+    userLocalStorage.remove();
+    dispatch(setUserLogin(null));
+    navigate("/login");
+  };
   const handleRenderUser = () => {
     if (user) {
       return (
@@ -22,7 +34,7 @@ export default function HeaderTablet() {
             />
             <h3 className="text-lg">{user.hoTen}</h3>
           </div>
-          <NavLink className="" to="/login">
+          <NavLink onClick={handleLogout} className="" to="/login">
             <button className="self-center text-lg text-gray-400 rounded hover:text-red-600 ">
               Đăng xuất
             </button>
@@ -33,6 +45,9 @@ export default function HeaderTablet() {
       return (
         <>
           <NavLink
+            onClick={() => {
+              setShow(!show);
+            }}
             to="/login"
             className="flex items-center text-gray-400 hover:text-red-500 mb-2"
           >
@@ -42,6 +57,9 @@ export default function HeaderTablet() {
             Đăng Nhập
           </NavLink>
           <NavLink
+            onClick={() => {
+              setShow(!show);
+            }}
             to="/register"
             className="flex items-center text-gray-400 hover:text-red-500 mb-2"
           >
@@ -106,17 +124,32 @@ export default function HeaderTablet() {
               <div className="w-full h-px bg-red-600 mb-2 mt-3"></div>
               <div className=" leading-8">
                 <ul>
-                  <li className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500">
+                  <li
+                    onClick={() => {
+                      setShow(!show);
+                    }}
+                    className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500"
+                  >
                     <NavLink to="/">Trang chủ</NavLink>
                   </li>
-                  <li className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500">
-                    <a href=""> Lịch chiếu</a>
+                  <li
+                    onClick={() => {
+                      setShow(!show);
+                    }}
+                    className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500"
+                  >
+                    <a href="#lichchieu"> Lịch chiếu</a>
                   </li>
                   <li className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500">
-                    <a href="">Cụm rạp</a>
+                    <a href="#cumrap">Cụm rạp</a>
                   </li>
-                  <li className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500">
-                    <a href="">Tin tức</a>
+                  <li
+                    onClick={() => {
+                      setShow(!show);
+                    }}
+                    className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500"
+                  >
+                    <a href="#tintuc">Tin tức</a>
                   </li>
                   <li className="text-gray-400 block no-underline text-lg leading-8 hover:text-red-500">
                     <a href="">Ứng dụng</a>

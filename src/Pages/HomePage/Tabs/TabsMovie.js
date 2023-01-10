@@ -91,7 +91,7 @@ export default function TabsMovie() {
     });
   };
   return (
-    <div id="lichchieu" className="px-10">
+    <div id="lichchieu" className="px-10 hidden lg:block md:block">
       <div className="shadow-xl">
         <Tabs
           style={{

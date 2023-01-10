@@ -12,7 +12,7 @@ export const movieService = {
   },
   getListMovie: (data) => {
     return base_URL.get(
-      `/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP05&soTrang=${data}&soPhanTuTrenTrang=10`
+      `/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP11&soTrang=${data}&soPhanTuTrenTrang=10`
     );
   },
   getMovieDaily: () => {
