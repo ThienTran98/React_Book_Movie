@@ -12,6 +12,7 @@ export default function RegisterPage() {
       .postRegister(values)
       .then((res) => {
         message.success("Đăng ký thành công");
+        console.log(res.data.content);
       })
       .catch((err) => {
         message.error(err.response.data.content);
@@ -41,7 +42,7 @@ export default function RegisterPage() {
           width: 70,
         }}
       >
-        <Option value="GP05">GP05</Option>
+        <Option value="GP01">GP05</Option>
       </Select>
     </Form.Item>
   );
@@ -50,21 +51,19 @@ export default function RegisterPage() {
     <div className="mt-24 h-screen w-screen">
       <div className={`${styles.modalRegister} flex`}>
         <div className=" container my-auto">
-          <div className=" h-3/5 w-2/3 flex bg-white mx-auto rounded px-5 py-10 ">
+          <div className=" h-3/5 w-2/3 flex bg-white mx-auto rounded p-5 ">
             <div className="w-1/2 my-auto hidden lg:flex md:flex">
               <Lottie animationData={bg_panda} />
             </div>
-            <div className="lg:w-1/2 md:w-1/2 w-full my-auto px-5 py-10">
-              <h2 className="text-center text-2xl text-amber-600 mb-10">
-                Đăng ký
-              </h2>
+            <div className="lg:w-1/2 md:w-1/2 w-full my-auto ">
+              <h2 className="text-center text-2xl text-amber-600">Đăng ký</h2>
               <Form
                 name="basic"
                 labelCol={{
-                  span: 8,
+                  span: 10,
                 }}
                 wrapperCol={{
-                  span: 16,
+                  span: 14,
                 }}
                 initialValues={{
                   remember: true,
@@ -183,12 +182,7 @@ export default function RegisterPage() {
                     }}
                   />
                 </Form.Item>
-                <Form.Item
-                  wrapperCol={{
-                    offset: 12,
-                    span: 24,
-                  }}
-                >
+                <Form.Item className="flex items-center justify-center">
                   <Button
                     className="bg-cyan-400 outline-offset-0 text-red-500"
                     htmlType="submit"
@@ -197,7 +191,7 @@ export default function RegisterPage() {
                   </Button>
                 </Form.Item>
               </Form>
-              <div className="text-right text-blue-700 hover:text-red-600 underline underline-offset-1">
+              <div className="text-right mr-8 hover:text-red-600 text-green-400 underline underline-offset-1">
                 <NavLink to="/login">Bạn đã có tài khoản ? Đăng nhập</NavLink>
               </div>
             </div>
