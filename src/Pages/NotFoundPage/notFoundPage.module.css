@@ -1,0 +1,13 @@
+.positionNot {
+    content : "";
+    position : absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+
+.btn + .btn {
+    margin-top: 12px;
+}

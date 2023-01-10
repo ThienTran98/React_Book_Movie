@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const { Meta } = Card;
 
 export default function CardItem(props) {
-  const { hinhAnh, tenPhim, moTa } = props.item;
+  const { hinhAnh, tenPhim, moTa, maPhim } = props.item;
 
   return (
     <Card
@@ -24,12 +24,12 @@ export default function CardItem(props) {
         }
       />
       <div className="text-center mt-5">
-        <NavLink to="/buy-tickets/:id">
+        <NavLink to={`/buy-tickets/${maPhim}`}>
           <button className="bg-red-500 text-white px-3 py-2 rounded mr-2 hover:text-red-500 hover:bg-white">
             Đặt vé
           </button>
         </NavLink>
-        <NavLink to="/detail/:id">
+        <NavLink to={`/detail/${maPhim}`}>
           <button className="bg-red-500 text-white px-3 py-2 rounded hover:text-red-500 hover:bg-white">
             Xem chi tiết
           </button>
