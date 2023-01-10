@@ -2,9 +2,9 @@ import React from "react";
 
 export default function FooterMobile() {
   return (
-    <footer class="py-6 bg-gray-800 text-gray-50 ">
+    <footer className="py-6 bg-gray-800 text-gray-50 ">
       <div className="container mx-auto px-10">
-        <div class="grid-cols-2 grid gap-3 text-sm font-normal items-center">
+        <div className="grid-cols-2 grid gap-3 text-sm font-normal items-center">
           <div>Thỏa thuận sử dụng</div>
           <div>Chính sách bảo mật</div>
         </div>

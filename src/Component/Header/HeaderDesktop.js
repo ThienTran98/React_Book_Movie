@@ -58,7 +58,7 @@ export default function HeaderDesktop() {
           <li className="flex">
             <a
               rel="noopener noreferrer"
-              href="#"
+              href="#lichchieu"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
             >
               Lịch Chiếu
@@ -76,7 +76,7 @@ export default function HeaderDesktop() {
           <li className="flex">
             <a
               rel="noopener noreferrer"
-              href="#"
+              href="#tintuc"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
             >
               Tin Tức

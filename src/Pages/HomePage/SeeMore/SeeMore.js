@@ -13,7 +13,7 @@ export default function SeeMore() {
     }
   };
   return (
-    <div className="text-center py-5 px-10">
+    <div id="tintuc" className="text-center py-5 px-10">
       <div className="container mx-auto">
         <div>
           <ul className="items-stretch space-x-3 flex justify-center text-xl font-medium">
