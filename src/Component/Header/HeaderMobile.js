@@ -75,9 +75,9 @@ export default function HeaderTablet() {
   return (
     <header className="p-4 bg-gray-800 text-red-500 shadow-md fixed top-0 right-0 left-0 z-30">
       <div className="container flex justify-between h-16 mx-auto">
-        <a
+        <NavLink
           rel="noopener noreferrer"
-          href="#"
+          to="/"
           aria-label="Back to homepage"
           className="flex items-center p-2"
         >
@@ -86,7 +86,7 @@ export default function HeaderTablet() {
             src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png"
             alt=""
           />
-        </a>
+        </NavLink>
         <button
           className="p-4 shrink-0 relative"
           onClick={() => {

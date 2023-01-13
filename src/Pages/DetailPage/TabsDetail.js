@@ -6,7 +6,6 @@ import moment from "moment";
 const onChange = (key) => {};
 
 export default function TabsDetail(props) {
-  console.log(props.id);
   const [theaterDetail, setThearterDetail] = useState(null);
   useEffect(() => {
     movieService
@@ -54,8 +53,8 @@ export default function TabsDetail(props) {
     });
   };
   return (
-    <div className="md:px-10 md:pb-10 lg:px-10 lg:pb-10">
-      <div id="muave" className="bg-slate-50 shadow-md px-5 py-10">
+    <div id="muave" className="md:px-10 md:pb-10 lg:px-10 lg:pb-10">
+      <div className="bg-slate-50 shadow-md px-5 py-10">
         <Tabs
           defaultActiveKey="1"
           items={handleRenderLogoTheater()}

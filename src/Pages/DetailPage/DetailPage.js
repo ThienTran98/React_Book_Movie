@@ -98,10 +98,10 @@ export default function DetailPage() {
           onClick={handleClickShow}
           className="bg-black-rgba fixed top-0 left-0 right-0 bottom-0 z-50  flex items-center justify-center"
         >
-          <div className="w-2/3 h-3/5">
+          <div className="md:w-2/3 md:h-3/5 lg:w-2/3 lg:h-3/5 w-full">
             <div
               className="embed-responsive embed-responsive-4by3 relative w-full overflow-hidden"
-              style={{ paddingTop: "75%" }}
+              style={{ paddingTop: "50%" }}
             >
               <iframe
                 className="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full"

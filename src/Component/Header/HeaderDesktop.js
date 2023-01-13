@@ -75,7 +75,7 @@ export default function HeaderDesktop() {
             <a
               rel="noopener noreferrer"
               href="#lichchieu"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
+              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Lịch Chiếu
             </a>
@@ -84,7 +84,7 @@ export default function HeaderDesktop() {
             <a
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
+              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Cụm Rạp
             </a>
@@ -93,7 +93,7 @@ export default function HeaderDesktop() {
             <a
               rel="noopener noreferrer"
               href="#tintuc"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
+              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Tin Tức
             </a>
@@ -102,7 +102,7 @@ export default function HeaderDesktop() {
             <a
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500"
+              className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Ứng Dụng
             </a>
