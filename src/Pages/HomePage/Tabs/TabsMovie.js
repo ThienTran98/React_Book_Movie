@@ -82,7 +82,7 @@ export default function TabsMovie() {
       return (
         <NavLink
           key={index}
-          to="/buy-tickets/:id"
+          to={`/buy-tickets/${detail.maLichChieu}`}
           className="bg-slate-200 text-green-500 py-2 min-w-11rem text-center hover:bg-red-500 hover:text-white"
         >
           <div>{moment(detail.ngayChieuGioChieu).format("LLL")}</div>

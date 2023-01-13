@@ -1,4 +1,4 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment/moment";
 import React, { useEffect, useRef, useState } from "react";
@@ -98,7 +98,7 @@ export default function DetailPage() {
           onClick={handleClickShow}
           className="bg-black-rgba fixed top-0 left-0 right-0 bottom-0 z-50  flex items-center justify-center"
         >
-          <div className="md:w-2/3 md:h-3/5 lg:w-2/3 lg:h-3/5 w-full">
+          <div className="md:w-2/3 md:h-3/5 lg:w-2/3 lg:h-3/5 w-full relative">
             <div
               className="embed-responsive embed-responsive-4by3 relative w-full overflow-hidden"
               style={{ paddingTop: "50%" }}
@@ -111,6 +111,11 @@ export default function DetailPage() {
                 id={240632615}
               />
             </div>
+          </div>
+          <div
+            className={`text-2xl ${styles.cancelButton} text-white hover:text-red-500 cursor-pointer`}
+          >
+            <FontAwesomeIcon icon={faXmark} />
           </div>
         </div>
       ) : null}

@@ -5,3 +5,11 @@
     background-size: cover; 
     background-attachment: fixed;
 }
+
+.cancelButton {
+    position: absolute;
+    top: 15%;
+    right:15%;
+    content: "";
+
+}
