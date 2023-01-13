@@ -2,23 +2,23 @@ import React from "react";
 
 export default function FooterDesktop() {
   return (
-    <footer className="py-6 bg-gray-800 text-gray-50">
+    <footer className="py-6 bg-gray-800 text-gray-50 w-full">
       <div className="px-10 container mx-auto">
         <div className="grid grid-cols-3">
           <div>
             <h2 className="text-white text-xl">CGV</h2>
             <div className="grid grid-cols-2 text-gray-400 text-sm leading-7">
-              <div className="hover:text-white">
+              <div className="hover:text-white transition duration-150 ease-in-out">
                 <h3>FAQ</h3>
               </div>
-              <div className="hover:text-white">
+              <div className="hover:text-white transition duration-150 ease-in-out">
                 <h3>Thỏa thuận sử dụng</h3>
               </div>
-              <div className="hover:text-white">
+              <div className="hover:text-white transition duration-150 ease-in-out">
                 <img src="" alt="" />
                 <h3>Brand Guidelines</h3>
               </div>
-              <div className="hover:text-white">
+              <div className="hover:text-white transition duration-150 ease-in-out">
                 <h3>Chính sách bảo mật</h3>
               </div>
             </div>
@@ -29,7 +29,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.cgv.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/cgv.png"
                     alt=""
@@ -39,7 +39,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.bhdstar.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/bhd-star-cineplex.png"
                     alt=""
@@ -49,7 +49,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.bhdstar.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (14).png"
                     alt=""
@@ -59,7 +59,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="http://cinestar.com.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (13).png"
                     alt=""
@@ -69,7 +69,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://lottecinemavn.com/LCHS/index.aspx">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/footer-icon-5.08167da6.png"
                     alt=""
@@ -79,7 +79,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.megagscinemas.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (12).png"
                     alt=""
@@ -89,7 +89,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.betacinemas.vn/home.htm">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_jpeg;bas… (2).jpg"
                     alt=""
@@ -99,7 +99,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="http://ddcinema.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (11).png"
                     alt=""
@@ -109,7 +109,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://touchcinema.com/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (10).png"
                     alt=""
@@ -119,7 +119,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://cinemaxvn.com/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_jpeg;bas… (1).jpg"
                     alt=""
@@ -129,7 +129,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://starlight.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (9).png"
                     alt=""
@@ -139,7 +139,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.dcine.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/icon-footer-12.6b4821d0.png"
                     alt=""
@@ -149,7 +149,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://zalopay.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (8).png"
                     alt=""
@@ -159,7 +159,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.payoo.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (7).png"
                     alt=""
@@ -169,7 +169,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://portal.vietcombank.com.vn/Pages/Home.aspx?devicechannel=default">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (6).png"
                     alt=""
@@ -179,7 +179,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.agribank.com.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (5).png"
                     alt=""
@@ -189,7 +189,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.vietinbank.vn/web/home/vn/index.html">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (4).png"
                     alt=""
@@ -199,7 +199,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://www.indovinabank.com.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (3).png"
                     alt=""
@@ -209,7 +209,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://webv3.123go.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_png;base… (2).png"
                     alt=""
@@ -219,7 +219,7 @@ export default function FooterDesktop() {
               <div>
                 <a href="https://laban.vn/">
                   <img
-                    className="hover:opacity-75"
+                    className="hover:opacity-75 transition duration-150 ease-in-out"
                     style={{ width: 30, borderRadius: "50%" }}
                     src="./img/data_image_jpeg;bas….jpg"
                     alt=""

@@ -32,7 +32,7 @@ export default function HeaderDesktop() {
           <NavLink className="" to="/login">
             <button
               onClick={handleLogout}
-              className="self-center px-8 py-3 rounded hover:text-red-600 "
+              className="self-center px-8 py-3 rounded hover:text-red-600 transition duration-150 ease-in-out "
             >
               Đăng xuất
             </button>
@@ -43,12 +43,12 @@ export default function HeaderDesktop() {
       return (
         <>
           <NavLink to="/register">
-            <button className="self-center px-8 py-3 hover:text-red-600 border-solid border-rose-600 border-r">
+            <button className="self-center px-8 py-3 hover:text-red-600 border-solid border-rose-600 border-r transition duration-150 ease-in-out">
               <FontAwesomeIcon icon={faUser} /> Đăng Ký
             </button>
           </NavLink>
           <NavLink to="/login">
-            <button className="self-center px-8 py-3 hover:text-red-600 ">
+            <button className="self-center px-8 py-3 hover:text-red-600  transition duration-150 ease-in-out">
               <FontAwesomeIcon icon={faUser} /> Đăng Nhập
             </button>
           </NavLink>

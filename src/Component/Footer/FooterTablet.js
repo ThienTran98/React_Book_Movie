@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FooterTablet() {
   return (
-    <footer className="py-6 bg-gray-800 text-gray-50 ">
+    <footer className="py-6 bg-gray-800 text-gray-50 w-full ">
       <div className="container mx-auto px-10">
         <div className="grid grid-cols-2 gap-3">
           <div className="text-sm mx-auto">
