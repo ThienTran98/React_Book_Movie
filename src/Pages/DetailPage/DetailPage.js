@@ -113,7 +113,7 @@ export default function DetailPage() {
             </div>
           </div>
           <div
-            className={`text-2xl ${styles.cancelButton} text-white hover:text-red-500 cursor-pointer`}
+            className={`text-2xl ${styles.cancelButton} text-white hover:text-red-500 cursor-pointer hidden lg:block md:block`}
           >
             <FontAwesomeIcon icon={faXmark} />
           </div>

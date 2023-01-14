@@ -31,13 +31,8 @@ export default function CardItemMobile({ item }) {
           }
         />
         <div className="text-center mt-5">
-          <NavLink to={`/buy-tickets/${item.maPhim}`}>
-            <button className="bg-red-500 text-white px-3 py-2 rounded mr-2 hover:text-red-500 hover:bg-white">
-              Đặt vé
-            </button>
-          </NavLink>
           <NavLink to={`/detail/${item.maPhim}`}>
-            <button className="bg-red-500 text-white px-3 py-2 rounded hover:text-red-500 hover:bg-white">
+            <button className="bg-red-500 text-white px-3 py-2 rounded hover:text-red-500 hover:bg-white hover:border-red-600 border-solid  border">
               Xem chi tiết
             </button>
           </NavLink>

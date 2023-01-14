@@ -5,6 +5,7 @@ import { getPagination } from "../../../redux-toolkit/movieSlice";
 import { Pagination } from "antd";
 import { Card } from "antd";
 import CardItemMobile from "./CardItemMobile";
+
 const { Meta } = Card;
 
 export default function ListMovie() {
@@ -15,6 +16,7 @@ export default function ListMovie() {
       setListMovie(res.data.content);
     });
   }, [currentPage]);
+
   const onChange = (page) => {
     setCurrentPage(page);
   };

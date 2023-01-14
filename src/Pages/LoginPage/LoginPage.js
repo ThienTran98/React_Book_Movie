@@ -21,7 +21,7 @@ export default function LoginPage() {
         userLocalStorage.set(res.data.content);
         message.success("Đăng nhập thành công");
         setTimeout(() => {
-          navigate("/");
+          navigate(-1);
         }, 1500);
       })
       .catch((error) => {

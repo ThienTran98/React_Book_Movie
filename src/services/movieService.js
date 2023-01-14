@@ -4,9 +4,9 @@ export const movieService = {
   getBanner: () => {
     return base_URL.get("/api/QuanLyPhim/LayDanhSachBanner");
   },
-  // getListMovie: () => {
-  //   return base_URL.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP05");
-  // },
+  getListFilm: () => {
+    return base_URL.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP11");
+  },
   getDetailMovie: (data) => {
     return base_URL.get(`/api/QuanLyPhim/LayThongTinPhim?MaPhim=${data}`);
   },
