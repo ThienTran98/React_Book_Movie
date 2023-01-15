@@ -1,0 +1,38 @@
+.bgMovie {
+  background-image: url(../../assets/img/240_F_317796693_B5yF8ybwUMb3MDhe6QQWGJKQYYNHfxKg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.trapezoid {
+  border-bottom: 50px solid rgb(223, 54, 12);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 100%;
+  box-shadow: -9px 28px 27px 22px rgba(14, 165, 47, 0.38);
+  filter: drop-shadow(10px 5px 12px rgba(169, 168, 169, 0.867));
+}
+
+.ghe {
+  height: 35px;
+  width: 35px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+.gheDaDat {
+  background-color: brown !important;
+}
+.gheDangDat {
+  background-color: chartreuse !important;
+}
+
+.gheVip {
+  background-color: red !important;
+}

@@ -3,11 +3,15 @@ import { movieService } from "../../../services/movieService";
 import { Tabs } from "antd";
 import moment from "moment/moment";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const onChange = (key) => {};
 
 export default function TabsMovie() {
   const [data, setData] = useState([]);
+  const user = useSelector((state) => {
+    return state.userSlice.user;
+  });
 
   useEffect(() => {
     movieService
@@ -80,13 +84,29 @@ export default function TabsMovie() {
   const renderListScheduleTimeMovie = (item) => {
     return item.lstLichChieuTheoPhim.slice(0, 6).map((detail, index) => {
       return (
-        <NavLink
-          key={index}
-          to={`/buy-tickets/${detail.maLichChieu}`}
-          className="bg-slate-200 text-green-500 py-2 min-w-11rem text-center hover:bg-red-500 hover:text-white"
-        >
-          <div>{moment(detail.ngayChieuGioChieu).format("LLL")}</div>
-        </NavLink>
+        <>
+          {user ? (
+            <>
+              <NavLink
+                key={index}
+                to={`/buy-tickets/${detail.maLichChieu}`}
+                className="bg-slate-200 text-green-500 py-2 min-w-11rem text-center hover:bg-red-500 hover:text-white"
+              >
+                <div>{moment(detail.ngayChieuGioChieu).format("LLL")}</div>
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink
+                key={index}
+                to="/login"
+                className="bg-slate-200 text-green-500 py-2 min-w-11rem text-center hover:bg-red-500 hover:text-white"
+              >
+                <div>{moment(detail.ngayChieuGioChieu).format("LLL")}</div>
+              </NavLink>
+            </>
+          )}
+        </>
       );
     });
   };
