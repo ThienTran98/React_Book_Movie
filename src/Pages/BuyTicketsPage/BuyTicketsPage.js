@@ -1,23 +1,49 @@
-import moment from "moment";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { setUserBookTickets } from "../../redux-toolkit/userSlice";
 import { movieService } from "../../services/movieService";
 import styles from "./buyTickets.module.css";
+import "./buyTickets.css";
 
 export default function BuyTicketsPage() {
-  const [showTimes, setShowTimes] = useState();
+  const [showTimes, setShowTimes] = useState(null);
   const codeSchedule = useParams();
+  const dispatch = useDispatch();
+  const userBookTicket = useSelector((state) => {
+    return state.userSlice.userBookTickets;
+  });
   useEffect(() => {
     movieService.getListTheaterBookTickets(codeSchedule.id).then((res) => {
       setShowTimes(res.data.content);
-      console.log("res.data.content: ", res.data.content);
     });
   }, [codeSchedule.id]);
   const handleRenderChairs = () => {
     return showTimes?.danhSachGhe.map((chair, index) => {
+      let classGheVip = chair.loaiGhe === "Vip" ? "gheVip" : "";
+      let classGheDaDat = chair.daDat === true ? "gheDaDat" : "";
+      // Ghế đang đặt ; lúc chưa có trong mảng mảng thì k add class
+      let classGheDangDat = "";
+      // kiểm tra trong mảng có ghế chưa nếu có thì add còn k thì '""
+      let indexGheDaDangDat = userBookTicket.findIndex((gheDangDat) => {
+        return gheDangDat.maGhe === chair.maGhe;
+      });
+      if (indexGheDaDangDat !== -1) {
+        classGheDangDat = "gheDangDat";
+      } else {
+        classGheDangDat = "";
+      }
       return (
         <>
-          <button key={index} className={`${styles.ghe}`}>
+          <button
+            onClick={() => {
+              dispatch(setUserBookTickets(chair));
+            }}
+            key={index}
+            className={`ghe ${classGheVip} ${classGheDaDat} ${classGheDangDat}`}
+          >
             {chair.tenGhe}
           </button>
           {(index + 1) % 16 === 0 ? <br /> : ""}
@@ -35,11 +61,31 @@ export default function BuyTicketsPage() {
               Màn hình
             </h2>
             <div className="">{handleRenderChairs()}</div>
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              <div className="flex items-center text-white">
+                <div className="w-8 h-8  rounded m-1 bg-lime-500 border-lime-500"></div>
+                Đang chọn
+              </div>
+              <div className="flex items-center text-white">
+                <div className="w-8 h-8 bg-red-900 rounded m-1 border-red-900 flex items-center justify-center">
+                  <FontAwesomeIcon className="text-2xl" icon={faXmark} />
+                </div>
+                Đã chọn
+              </div>
+              <div className="flex items-center text-white ">
+                <div className="w-8 h-8  rounded m-1 bg-stone-200 border-stone-200"></div>
+                Thường
+              </div>
+              <div className="flex items-center text-white ">
+                <div className="w-8 h-8 bg-red-500 border-red-500 rounded m-1"></div>
+                Vip(Prime)
+              </div>
+            </div>
           </div>
 
           <div className="col-span-3 mt-10">
             <div className="bg-white">
-              <div className="border-b py-4">Thành Tiền : {}</div>
+              <div className="border-b py-4">Thành Tiền : 0</div>
               <div className="border-b py-4">
                 Cụm Rạp : {showTimes?.thongTinPhim.tenCumRap}
               </div>
@@ -47,8 +93,7 @@ export default function BuyTicketsPage() {
                 Địa Chỉ : {showTimes?.thongTinPhim.diaChi}
               </div>
               <div className="border-b py-4">
-                Ngày Chiếu :
-                {moment(showTimes?.thongTinPhim.ngayChieu).format("LL")}
+                Ngày Chiếu :{showTimes?.thongTinPhim.ngayChieu}
               </div>
               <div className="border-b py-4">
                 {showTimes?.thongTinPhim.tenPhim}
