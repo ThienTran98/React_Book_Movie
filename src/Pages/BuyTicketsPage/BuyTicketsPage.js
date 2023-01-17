@@ -10,11 +10,20 @@ import "./buyTickets.css";
 
 export default function BuyTicketsPage() {
   const [showTimes, setShowTimes] = useState(null);
+
   const codeSchedule = useParams();
   const dispatch = useDispatch();
   const userBookTicket = useSelector((state) => {
     return state.userSlice.userBookTickets;
   });
+  const handleClickBookItem = (chair) => {
+    dispatch(setUserBookTickets(chair));
+  };
+  const handleTotalPrice = () => {
+    return userBookTicket.reduce((acc, cur) => {
+      return acc + cur.giaVe;
+    }, 0);
+  };
   useEffect(() => {
     movieService.getListTheaterBookTickets(codeSchedule.id).then((res) => {
       setShowTimes(res.data.content);
@@ -39,7 +48,7 @@ export default function BuyTicketsPage() {
         <>
           <button
             onClick={() => {
-              dispatch(setUserBookTickets(chair));
+              handleClickBookItem(chair);
             }}
             key={index}
             className={`ghe ${classGheVip} ${classGheDaDat} ${classGheDangDat}`}
@@ -53,7 +62,7 @@ export default function BuyTicketsPage() {
   };
   return (
     <div className={`mt-24 ${styles.bgMovie}`}>
-      <div className="px-10 container">
+      <div className="px-10 container pb-20">
         <div className="grid grid-cols-12 gap-4 ">
           <div className="col-span-9 mt-10 mx-auto">
             <div className={` ${styles.trapezoid}`}></div>
@@ -83,9 +92,14 @@ export default function BuyTicketsPage() {
             </div>
           </div>
 
-          <div className="col-span-3 mt-10">
-            <div className="bg-white">
-              <div className="border-b py-4">Thành Tiền : 0</div>
+          <div className="col-span-3 mt-10 ">
+            <div className="bg-white px-5 text-red-500 ">
+              <div className="border-b py-4 ">
+                Thành Tiền :{" "}
+                <span className="text-lime-500">
+                  {handleTotalPrice().toLocaleString() + "VND" || "0 VND"}
+                </span>
+              </div>
               <div className="border-b py-4">
                 Cụm Rạp : {showTimes?.thongTinPhim.tenCumRap}
               </div>
@@ -105,7 +119,14 @@ export default function BuyTicketsPage() {
                 Suất Chiếu : {showTimes?.thongTinPhim.gioChieu}
               </div>
               <div className="border-b py-4">
-                Suất Chiếu : {showTimes?.thongTinPhim.gioChieu}
+                Ghế Đang Chọn :
+                {userBookTicket.map((item) => {
+                  return (
+                    <span className="text-lime-400 inline-block ">
+                      Ghế{item.tenGhe},
+                    </span>
+                  );
+                })}
               </div>
 
               <div className=" border-b py-4 text-2xl text-red-500 border-solid bg-slate-50 hover:bg-red-500 hover:text-white block ">
