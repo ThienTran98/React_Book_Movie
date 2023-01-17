@@ -41,13 +41,16 @@ export const movieService = {
     return base_URL.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`);
   },
   //quản lí đặt vé
-  postTicketManagement: () => {
-    return base_URL.post("/api/QuanLyDatVe/TaoLichChieu");
-  },
+  // postTicketManagement: () => {
+  //   return base_URL.post("/api/QuanLyDatVe/TaoLichChieu");
+  // },
   // danh sách phòng vé
   getListTheaterBookTickets: (lichChieu) => {
     return base_URL.get(
       `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${lichChieu}`
     );
+  },
+  postTicketManagement: (inforBookTicket) => {
+    return base_URL.post("/api/QuanLyDatVe/DatVe", inforBookTicket);
   },
 };
