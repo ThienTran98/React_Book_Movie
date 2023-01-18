@@ -200,7 +200,7 @@ export default function BuyTicketsPage() {
           </div>
         </div>
         {/* tablet */}
-        <div className="pt-10 hidden md:block">
+        <div className="pt-10 hidden sm:hidden md:block lg:hidden">
           <div className="">
             <div className={` ${styles.trapezoid}`}></div>
             <h2 className="text-red-600 pt-5 font-bold text-xl text-center">
@@ -289,7 +289,7 @@ export default function BuyTicketsPage() {
           </div>
         </div>
         {/* mobile */}
-        <div className="pt-10">
+        <div className="pt-10 md:hidden lg:hidden">
           <div className="">
             <div className={` ${styles.trapezoid}`}></div>
             <h2 className="text-red-600 pt-5 font-bold text-xl text-center">
