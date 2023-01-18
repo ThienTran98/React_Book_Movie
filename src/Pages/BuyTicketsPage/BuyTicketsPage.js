@@ -133,7 +133,7 @@ export default function BuyTicketsPage() {
               </div>
               <div className="flex items-center text-white">
                 <div className="w-8 h-8 bg-red-900 rounded m-1 border-red-900 flex items-center justify-center"></div>
-                Đã chọn
+                Đã Đặt
               </div>
               <div className="flex items-center text-white ">
                 <div className="w-8 h-8  rounded m-1 bg-stone-200 border-stone-200"></div>
@@ -210,11 +210,11 @@ export default function BuyTicketsPage() {
             <div className="mt-6 flex items-center justify-between">
               <div className="flex items-center text-white">
                 <div className="w-8 h-8  rounded m-1 bg-lime-500 border-lime-500"></div>
-                Đang chọn
+                Đang Chọn
               </div>
               <div className="flex items-center text-white">
                 <div className="w-8 h-8 bg-red-900 rounded m-1 border-red-900 flex items-center justify-center"></div>
-                Đã chọn
+                Đã Đặt
               </div>
               <div className="flex items-center text-white ">
                 <div className="w-8 h-8  rounded m-1 bg-stone-200 border-stone-200"></div>
@@ -305,7 +305,7 @@ export default function BuyTicketsPage() {
               </div>
               <div className="flex items-center text-white ml-6">
                 <div className="w-6 h-6 bg-red-900 rounded m-1 border-red-900 flex items-center justify-center"></div>
-                Đã chọn
+                Đã Đặt
               </div>
               <div className="flex items-center text-white  ml-6">
                 <div className="w-6 h-6  rounded m-1 bg-stone-200 border-stone-200"></div>
