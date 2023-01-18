@@ -74,7 +74,7 @@ export default function HeaderTablet() {
     }
   };
   return (
-    <header className="p-4 bg-gray-800 text-red-500 shadow-md fixed top-0 right-0 left-0 z-30">
+    <header className="px-10 py-4 bg-gray-800 text-red-500 shadow-md fixed top-0 right-0 left-0 z-30 overflow-hidden">
       <div className="container flex justify-between h-16 mx-auto">
         <a
           rel="noopener noreferrer"
@@ -89,7 +89,7 @@ export default function HeaderTablet() {
           />
         </a>
         <button
-          className="p-4 shrink-0 relative"
+          className="p-4"
           onClick={() => {
             setShow(!show);
           }}
@@ -99,7 +99,7 @@ export default function HeaderTablet() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-8 h-8 "
+            className="w-8 h-8"
           >
             <path
               strokeLinecap="round"

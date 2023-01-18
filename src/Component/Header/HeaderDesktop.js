@@ -57,7 +57,7 @@ export default function HeaderDesktop() {
     }
   }; //bg-white-rgba
   return (
-    <header className="p-4  bg-gray-800 text-red-400 shadow-lg fixed top-0 right-0 left-0 z-30">
+    <header className="p-4 bg-gray-800 text-red-400 shadow-lg fixed top-0 right-0 left-0 z-30">
       <div className="container flex justify-between h-16 mx-auto">
         <NavLink
           rel="noopener noreferrer"
