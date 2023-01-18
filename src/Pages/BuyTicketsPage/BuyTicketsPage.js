@@ -11,26 +11,23 @@ import { message } from "antd";
 
 export default function BuyTicketsPage() {
   const [showTimes, setShowTimes] = useState(null);
-  const [bookTicket, setBookTicket] = useState({
-    maLichChieu: 0,
-    danhSachVe: [],
-  });
+  console.log("showTimes: ", showTimes);
+  const [bookTicket, setBookTicket] = useState({});
+
   // thông tin user đặt vé
   const codeSchedule = useParams();
   const dispatch = useDispatch();
   const userBookTicket = useSelector((state) => {
     return state.userSlice.userBookTickets;
   });
+  console.log("userBookTicket", userBookTicket);
   const handleClickBookItem = (chair) => {
     dispatch(setUserBookTickets(chair));
   };
+
   useEffect(() => {
     movieService.getListTheaterBookTickets(codeSchedule.id).then((res) => {
       setShowTimes(res.data.content);
-    });
-    setBookTicket({
-      maLichChieu: codeSchedule.id,
-      danhSachVe: userBookTicket,
     });
   }, [codeSchedule.id]);
   const handleTotalPrice = () => {
@@ -42,17 +39,15 @@ export default function BuyTicketsPage() {
     movieService.postTicketManagement(bookTicket).then((res) => {
       message.success(res.data.content);
     });
-
     setTimeout(() => {
-      movieService.getListTheaterBookTickets(codeSchedule.id).then((res) => {
-        setShowTimes(res.data.content);
-      });
+      window.location.reload();
     }, 1000);
   };
   const handleRenderChairs = () => {
     return showTimes?.danhSachGhe.map((chair, index) => {
       let classGheVip = chair.loaiGhe === "Vip" ? "gheVip" : "";
-      let classGheDaDat = chair.daDat === true ? "gheDaDat iconCanCel" : "";
+
+      let classGheDaDat = chair.daDat === true ? "gheDaDat" : "";
       // Ghế đang đặt ; lúc chưa có trong mảng mảng thì k add class
       let classGheDangDat = "";
       // kiểm tra trong mảng có ghế chưa nếu có thì add còn k thì '""
@@ -64,11 +59,16 @@ export default function BuyTicketsPage() {
       } else {
         classGheDangDat = "";
       }
+
       return (
         <>
           <button
             onClick={() => {
               handleClickBookItem(chair);
+              setBookTicket({
+                maLichChieu: codeSchedule.id,
+                danhSachVe: userBookTicket,
+              });
             }}
             disabled={chair.daDat === true}
             key={index}
@@ -83,7 +83,7 @@ export default function BuyTicketsPage() {
   };
   return (
     <div className={`mt-24 ${styles.bgMovie}`}>
-      <div className="px-10 container pb-20">
+      <div className="px-10 container pb-20 mx-auto">
         <div className="lg:grid grid-cols-12 gap-4 hidden">
           <div className="col-span-9 mt-10 mx-auto">
             <div className={` ${styles.trapezoid}`}></div>
@@ -161,6 +161,95 @@ export default function BuyTicketsPage() {
                   Đặt Vé
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-10">
+          <div className="">
+            <div className={` ${styles.trapezoid}`}></div>
+            <h2 className="text-red-600 pt-5 font-bold text-xl text-center">
+              Màn hình
+            </h2>
+            <div className="pt-10 text-center">{handleRenderChairs()}</div>
+            <div className="mt-6 flex items-center justify-between">
+              <div className="flex items-center text-white">
+                <div className="w-8 h-8  rounded m-1 bg-lime-500 border-lime-500"></div>
+                Đang chọn
+              </div>
+              <div className="flex items-center text-white">
+                <div className="w-8 h-8 bg-red-900 rounded m-1 border-red-900 flex items-center justify-center"></div>
+                Đã chọn
+              </div>
+              <div className="flex items-center text-white ">
+                <div className="w-8 h-8  rounded m-1 bg-stone-200 border-stone-200"></div>
+                Thường
+              </div>
+              <div className="flex items-center text-white ">
+                <div className="w-8 h-8 bg-red-500 border-red-500 rounded m-1"></div>
+                Vip(Prime)
+              </div>
+            </div>
+          </div>
+          <div className="bg-slate-700 mt-5">
+            <div className=" flex px-4 py-5 justify-center text-sm leading-6">
+              <div className="flex px-4 ">
+                <div className="w-36 h-40 ">
+                  <img
+                    className="block object-cover"
+                    src={showTimes?.thongTinPhim.hinhAnh}
+                    alt=""
+                  />
+                </div>
+                <div className="px-4">
+                  <div className="text-white">
+                    Tên Phim :
+                    <span className="">{showTimes?.thongTinPhim.tenPhim}</span>
+                  </div>
+                  <div className="text-white">
+                    Phòng Chiếu :
+                    <span className="">{showTimes?.thongTinPhim.tenRap}</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="text-white">
+                  Suất Chiếu:
+                  <span className="">{showTimes?.thongTinPhim.gioChieu}</span>
+                </div>
+                <div className="text-white">
+                  Rạp :
+                  <span className="">{showTimes?.thongTinPhim.tenCumRap}</span>
+                </div>
+              </div>
+              <div>
+                <div className="text-white">
+                  Ghế Đang Chọn :
+                  {userBookTicket.map((item) => {
+                    return (
+                      <span className="text-rose-500 inline-block ">
+                        Ghế{item.tenGhe},
+                      </span>
+                    );
+                  })}
+                </div>
+                <div className="text-white">
+                  <span className="">
+                    Tổng Tiền :
+                    <span className="text-rose-500 inline-block text-lg ">
+                      {handleTotalPrice().toLocaleString() + "VND" || "0 VND"}
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="text-center pb-4">
+              <button
+                onClick={handlePostListBookItem}
+                className="text-red-500 px-6 py-3 rounded bg-slate-200 hover:bg-red-500 hover:text-white ease-in-out duration-300 transition"
+              >
+                Đặt Vé
+              </button>
             </div>
           </div>
         </div>

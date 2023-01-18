@@ -12,7 +12,7 @@ export default function CardItem(props) {
       style={{
         textAlign: "justify",
       }}
-      className="mx-auto lg:w-64 md:w-56 shadow-2xl text-center mt-4"
+      className="mx-auto lg:w-56 md:w-56 shadow-2xl text-center mt-4"
       cover={<img alt="example" className="h-60 object-cover" src={hinhAnh} />}
     >
       <Meta
