@@ -16,6 +16,9 @@ export default function RegisterPage() {
       })
       .catch((err) => {
         message.error(err.response.data.content);
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       });
   };
   const onFinishFailed = (errorInfo) => {};
