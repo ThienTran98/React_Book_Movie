@@ -9,9 +9,6 @@ import { message } from "antd";
 
 export default function BuyTicketsPage() {
   const [showTimes, setShowTimes] = useState(null);
-  const [bookTicket, setBookTicket] = useState({});
-
-  // thông tin user đặt vé
   const codeSchedule = useParams();
   const dispatch = useDispatch();
   const userBookTicket = useSelector((state) => {
@@ -32,12 +29,17 @@ export default function BuyTicketsPage() {
     }, 0);
   };
   const handlePostListBookItem = () => {
-    movieService.postTicketManagement(bookTicket).then((res) => {
-      message.success(res.data.content);
-    });
+    movieService
+      .postTicketManagement({
+        maLichChieu: codeSchedule.id,
+        danhSachVe: userBookTicket,
+      })
+      .then((res) => {
+        message.success(res.data.content);
+      });
     setTimeout(() => {
       window.location.reload();
-    }, 1000);
+    }, 300);
   };
   const handleRenderChairs = () => {
     return showTimes?.danhSachGhe.map((chair, index) => {
@@ -61,10 +63,6 @@ export default function BuyTicketsPage() {
           <button
             onClick={() => {
               handleClickBookItem(chair);
-              setBookTicket({
-                maLichChieu: codeSchedule.id,
-                danhSachVe: userBookTicket,
-              });
             }}
             disabled={chair.daDat === true}
             key={index}
@@ -99,10 +97,6 @@ export default function BuyTicketsPage() {
           <button
             onClick={() => {
               handleClickBookItem(chair);
-              setBookTicket({
-                maLichChieu: codeSchedule.id,
-                danhSachVe: userBookTicket,
-              });
             }}
             disabled={chair.daDat === true}
             key={index}

@@ -51,6 +51,7 @@ export const movieService = {
     );
   },
   postTicketManagement: (inforBookTicket) => {
+    console.log(inforBookTicket);
     return base_URL.post("/api/QuanLyDatVe/DatVe", inforBookTicket);
   },
 };
