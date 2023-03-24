@@ -26,9 +26,6 @@ export default function LoginPage() {
       })
       .catch((error) => {
         message.error(error.response.data.content);
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
       });
   };
   const onFinishFailed = (errorInfo) => {};

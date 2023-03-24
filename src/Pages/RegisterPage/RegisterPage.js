@@ -12,13 +12,9 @@ export default function RegisterPage() {
       .postRegister(values)
       .then((res) => {
         message.success("Đăng ký thành công");
-        console.log(res.data.content);
       })
       .catch((err) => {
         message.error(err.response.data.content);
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
       });
   };
   const onFinishFailed = (errorInfo) => {};

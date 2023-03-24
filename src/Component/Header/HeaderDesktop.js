@@ -83,7 +83,7 @@ export default function HeaderDesktop() {
           <li className="flex">
             <a
               rel="noopener noreferrer"
-              href="#"
+              href="!#"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Cụm Rạp
@@ -101,7 +101,7 @@ export default function HeaderDesktop() {
           <li className="flex">
             <a
               rel="noopener noreferrer"
-              href="#"
+              href="!#"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent focus:text-violet-500 focus:border-violet-500 hover:text-slate-200"
             >
               Ứng Dụng
