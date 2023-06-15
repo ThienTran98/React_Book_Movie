@@ -33,7 +33,7 @@ export default function ListMovie() {
   return (
     <div className="container mx-auto lg:px-10 lg:py-6 md:px-10 md:py-6 ">
       <div className="flex-col justify-between flex-wrap">
-        <div className="lg:grid-cols-5 md:grid-cols-3 hidden lg:grid md:grid gap-3">
+        <div className="lg:grid-cols-5 md:grid-cols-3 hidden lg:grid md:grid">
           {handlerRenderListCard()}
         </div>
         <div className="px-4 py-10 md:hidden lg:hidden ">
